@@ -5,6 +5,12 @@ public class Company {
 
     private List<Employee> staff = new ArrayList<>();
 
+    Manager manager = new Manager();
+    TopManager topManager = new TopManager();
+    Operator operator = new Operator();
+
+    static int companyInCome = 0;
+
     public void hire(Employee employee) {
         staff.add(employee);
     }
@@ -13,7 +19,7 @@ public class Company {
         staff.addAll(employees);
     }
 
-    public void fire(String employee) {
+    public void fire(Employee employee) {
         staff.remove(employee);
     }
 
@@ -21,7 +27,8 @@ public class Company {
 * получение прибыли компании путем передачи колличества менеджеров которые зарабатывают от 115_00 до 140_000
 * */
     public int getIncome() {
-        return new Manager().companyInCome(getManager());
+        companyInCome = Manager.companyInCome(getManager());
+        return companyInCome;
     }
 
     public ArrayList<String> getTopSalaryStaff() {
@@ -90,7 +97,8 @@ public class Company {
                 "\nТоп-Менеджеры: " + getTopManager() + " чел." +
                 "\n================================" +
                 "\nПрибыль копании составила: " + getIncome() + " руб." +
-                "\nSalary manager = " + new Manager().getMonthSalary() +
-                "\nSalary operator = " + new Operator().getMonthSalary();
+                "\nSalary manager = " + manager.getMonthSalary() +
+                "\nSalary operator = " + operator.getMonthSalary() +
+                "\nSalary topManager = " + topManager.getMonthSalary();
     }
 }
