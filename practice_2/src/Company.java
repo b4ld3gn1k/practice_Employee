@@ -21,6 +21,7 @@ public class Company {
         staff.remove(employee);
     }
 
+// TODO: 26.11.2022 Сделать тогику работы двух методов ниже и доработаь методы увольнения
 
     public int getIncome() {
         int inCome = 0;
