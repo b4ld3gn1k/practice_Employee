@@ -4,4 +4,9 @@ public class Operator implements Employee{
     public int getMonthSalary() {
         return FIXED_SALARY;
     }
+
+    @Override
+    public int getMonthSalary(int companyInCome) {
+        return getMonthSalary();
+    }
 }

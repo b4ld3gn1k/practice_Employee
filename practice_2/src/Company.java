@@ -9,8 +9,6 @@ public class Company {
     TopManager topManager = new TopManager();
     Operator operator = new Operator();
 
-    static int companyInCome = 0;
-
     public void hire(Employee employee) {
         staff.add(employee);
     }
@@ -23,12 +21,16 @@ public class Company {
         staff.remove(employee);
     }
 
-/*
-* получение прибыли компании путем передачи колличества менеджеров которые зарабатывают от 115_00 до 140_000
-* */
+
     public int getIncome() {
-        companyInCome = Manager.companyInCome(getManager());
-        return companyInCome;
+        int inCome = 0;
+        for (Employee employee : staff){
+            if (employee instanceof Manager){
+                inCome += ((Manager) employee).getInCome();
+            }
+        }
+
+        return inCome;
     }
 
     public ArrayList<String> getTopSalaryStaff() {
@@ -39,17 +41,19 @@ public class Company {
         return null;
     }
 
+
+
     public void addEmployee(int countOperator, int countManager, int countTopManager){
         for (int i = 0; i < countOperator; i++) {
-            hire(new Operator());
+            hire(operator);
         }
 
         for (int i = 0; i < countManager; i++) {
-            hire(new Manager());
+            hire(manager);
         }
 
         for (int i = 0; i < countTopManager; i++) {
-            hire(new TopManager());
+            hire(topManager);
         }
     }
 
@@ -99,6 +103,6 @@ public class Company {
                 "\nПрибыль копании составила: " + getIncome() + " руб." +
                 "\nSalary manager = " + manager.getMonthSalary() +
                 "\nSalary operator = " + operator.getMonthSalary() +
-                "\nSalary topManager = " + topManager.getMonthSalary();
+                "\nSalary topManager = " + topManager.getMonthSalary(getIncome());
     }
 }

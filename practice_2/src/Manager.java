@@ -3,22 +3,26 @@ public class Manager implements Employee{
     static final double FIXED_PERCENT_FROM_MANAGER = 0.05;
     static int monthProfit = (int) (Math.random() * ((140_000 - 115_000) + 1)) + 115_000;
 
+    private int inCome = 0;
+
+    public Manager() {
+        inCome = (int) (Math.random() * ((140_000 - 115_000) + 1)) + 115_000;
+    }
+
     @Override
     public int getMonthSalary() {
         int fivePercentFromMonthProfit = (int) (monthProfit * FIXED_PERCENT_FROM_MANAGER);
         return FIXED_SALARY + fivePercentFromMonthProfit;
     }
 
-    /*
-    * Получение прибыли путем прибавления заработаных денег для компании
-    * */
-    public static int companyInCome(int countManagers){
-        int inCome = 0;
+    @Override
+    public int getMonthSalary(int companyInCome) {
+        return getMonthSalary();
+    }
 
-        for (int i = 0; i < countManagers; i++) {
-            inCome += monthProfit;
-        }
 
+    public int getInCome() {
         return inCome;
     }
+
 }
