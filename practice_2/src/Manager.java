@@ -1,7 +1,7 @@
-public class Manager implements Employee{
+public class Manager implements Employee {
 
-    static final double FIXED_PERCENT_FROM_MANAGER = 0.05;
-    static int monthProfit = (int) (Math.random() * ((140_000 - 115_000) + 1)) + 115_000;
+    private static final double FIXED_PERCENT_FROM_MANAGER = 0.05;
+    private final int FIXED_SALARY = (int) (Math.random() * 40_000) + 40_000;
 
     private int inCome = 0;
 
@@ -11,15 +11,8 @@ public class Manager implements Employee{
 
     @Override
     public int getMonthSalary() {
-        int fivePercentFromMonthProfit = (int) (monthProfit * FIXED_PERCENT_FROM_MANAGER);
-        return FIXED_SALARY + fivePercentFromMonthProfit;
+        return (int) (FIXED_SALARY + (inCome * FIXED_PERCENT_FROM_MANAGER));
     }
-
-    @Override
-    public int getMonthSalary(int companyInCome) {
-        return getMonthSalary();
-    }
-
 
     public int getInCome() {
         return inCome;

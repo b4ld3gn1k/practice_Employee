@@ -1,7 +1,12 @@
-public interface Employee {
-    static final int FIXED_SALARY = 30_000;
+public interface Employee extends Comparable<Employee>{
 
-    public int getMonthSalary();
+    int getMonthSalary();
 
-    public int getMonthSalary(int companyInCome);
+    default void setCompany(Company company){
+
+    }
+
+    default int compareTo(Employee o) {
+        return getMonthSalary() - o.getMonthSalary();
+    }
 }

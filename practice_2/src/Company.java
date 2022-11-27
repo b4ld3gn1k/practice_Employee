@@ -1,31 +1,35 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Company {
 
-    private List<Employee> staff = new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
 
-    Manager manager = new Manager();
-    TopManager topManager = new TopManager();
-    Operator operator = new Operator();
+    public List<Employee> getEmployees() {
+        return new ArrayList<>(employees);
+    }
 
     public void hire(Employee employee) {
-        staff.add(employee);
+        employee.setCompany(this);
+        employees.add(employee);
     }
 
     public void hireAll(List<Employee> employees) {
-        staff.addAll(employees);
+        for (Employee e : employees){
+            hire(e);
+        }
     }
 
     public void fire(Employee employee) {
-        staff.remove(employee);
+        employee.setCompany(null);
+        employees.remove(employee);
     }
-
-// TODO: 26.11.2022 Сделать тогику работы двух методов ниже и доработаь методы увольнения
 
     public int getIncome() {
         int inCome = 0;
-        for (Employee employee : staff){
+        for (Employee employee : employees){
             if (employee instanceof Manager){
                 inCome += ((Manager) employee).getInCome();
             }
@@ -34,34 +38,33 @@ public class Company {
         return inCome;
     }
 
-    public ArrayList<String> getTopSalaryStaff() {
-        return null;
+    public List<Employee> getTopSalaryStaff(int count) {
+        System.out.println("\nСамая высока зарплата у " + count + " сотрудников.");
+        return getList(count, Comparator.reverseOrder());
     }
 
-    public ArrayList<String> getLowestSalaryStaff() {
-        return null;
+    public List<Employee> getLowestSalaryStaff(int count) {
+        System.out.println("\nСамая низкая зарплата у " + count + " сотрудников.");
+        return getList(count, Comparator.naturalOrder());
     }
 
-
-
-    public void addEmployee(int countOperator, int countManager, int countTopManager){
-        for (int i = 0; i < countOperator; i++) {
-            hire(operator);
+    private List<Employee> getList (int count, Comparator<Employee> comparator){
+        if (count < 0){
+            System.out.println("Введено не коректное значение!");
+            return Collections.emptyList();
+        }
+        if (count > employees.size()){
+            count = employees.size();
         }
 
-        for (int i = 0; i < countManager; i++) {
-            hire(manager);
-        }
-
-        for (int i = 0; i < countTopManager; i++) {
-            hire(topManager);
-        }
+        employees.sort(comparator);
+        return employees.subList(0, count);
     }
 
     private int getOperator(){
         int countOperator = 0;
 
-        for (Employee employee : staff){
+        for (Employee employee : employees){
             if (employee instanceof Operator){
                 countOperator++;
             }
@@ -72,7 +75,7 @@ public class Company {
     private int getManager(){
         int countManager = 0;
 
-        for (Employee employee : staff){
+        for (Employee employee : employees){
             if (employee instanceof Manager){
                 countManager++;
 
@@ -84,7 +87,7 @@ public class Company {
     private int getTopManager(){
         int countTopManager = 0;
 
-        for (Employee employee : staff){
+        for (Employee employee : employees){
             if (employee instanceof TopManager){
                 countTopManager++;
             }
@@ -94,16 +97,13 @@ public class Company {
 
     @Override
     public String toString() {
-        return "В комании работают: " +
-                staff.size() + " человек." +
+        return  "\nВ комании работают: " + employees.size() + " человек." +
                 "\n================================" +
                 "\nОператоры: " + getOperator() + " чел." +
                 "\nМенеджеры: " + getManager() + " чел." +
                 "\nТоп-Менеджеры: " + getTopManager() + " чел." +
                 "\n================================" +
-                "\nПрибыль копании составила: " + getIncome() + " руб." +
-                "\nSalary manager = " + manager.getMonthSalary() +
-                "\nSalary operator = " + operator.getMonthSalary() +
-                "\nSalary topManager = " + topManager.getMonthSalary(getIncome());
+                "\nПрибыль копании составила: " + getIncome() + " руб.";
     }
+
 }
