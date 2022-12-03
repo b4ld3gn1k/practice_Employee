@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,14 +31,16 @@ public class Main {
     }
 
     public static void getTopAndLowSalary(int countTopSalary, int countLowSalary){
+        DecimalFormat decimalFormat = new DecimalFormat("00,000");
+
         List<Employee> getTopSalaryStaf = company.getTopSalaryStaff(countTopSalary);
         for (Employee employee : getTopSalaryStaf){
-            System.out.println(employee.getMonthSalary() + " rub.");
+            System.out.println(decimalFormat.format(employee.getMonthSalary()) + " руб.");
         }
 
         List<Employee> getLowestSalaryStaff = company.getLowestSalaryStaff(countLowSalary);
         for (Employee employee : getLowestSalaryStaff){
-            System.out.println(employee.getMonthSalary() + " rub.");
+            System.out.println(decimalFormat.format(employee.getMonthSalary()) + " руб.");
         }
     }
 
