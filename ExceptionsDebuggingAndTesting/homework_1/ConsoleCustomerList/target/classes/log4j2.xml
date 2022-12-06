@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="5">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} - %msg%n" />
+        </Console>
+        <File name="FileError" fileName="logs/errors-${date:dd.MM.yy}.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{dd-MM-yy HH:mm:ss.SSS} %-5p [%t] %C{2} %F%L %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="NEUTRAL" onMismatch="DENY" />
+            </Filters>
+        </File>
+
+        <File name="FileQueries" fileName="logs/queries-${date:dd.MM.yy}.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{dd-MM-yy HH:mm:ss.SSS} [%t] %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="FileError" level="debug"/>
+            <AppenderRef ref="FileQueries" level="debug"/>
+        </Root>
+    </Loggers>
+</Configuration>

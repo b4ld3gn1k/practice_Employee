@@ -1,0 +1,42 @@
+05-12-22 23:36:05.825 [main] INFO - help
+05-12-22 23:36:05.827 [main] INFO - [help]
+05-12-22 23:36:08.406 [main] INFO - list
+05-12-22 23:36:08.406 [main] INFO - [list]
+05-12-22 23:37:20.117 [main] INFO - add Freddy Mercury Queen@best.forever 85624785962
+05-12-22 23:37:20.118 [main] INFO - [add, Freddy Mercury Queen@best.forever 85624785962]
+05-12-22 23:37:28.896 [main] INFO - count
+05-12-22 23:37:28.897 [main] INFO - [count]
+05-12-22 23:37:37.557 [main] INFO - add sdjlhfg
+05-12-22 23:37:37.558 [main] INFO - [add, sdjlhfg]
+05-12-22 23:38:13.816 [main] INFO - add ds,hmfgsd,hjfg
+05-12-22 23:38:13.818 [main] INFO - [add, ds,hmfgsd,hjfg]
+05-12-22 23:41:00.138 [main] INFO - add sdjhfg
+05-12-22 23:41:00.140 [main] INFO - [add, sdjhfg]
+05-12-22 23:44:43.828 [main] INFO - add sdgdfgdh
+05-12-22 23:44:43.830 [main] INFO - [add, sdgdfgdh]
+05-12-22 23:46:41.565 [main] INFO - add sdfsdf
+05-12-22 23:46:41.567 [main] INFO - [add, sdfsdf]
+05-12-22 23:47:25.525 [main] INFO - add dgdf
+05-12-22 23:47:25.528 [main] INFO - [add, dgdf]
+05-12-22 23:48:17.693 [main] INFO - addsdfsf
+05-12-22 23:48:17.694 [main] INFO - [addsdfsf]
+05-12-22 23:48:20.886 [main] INFO - add dfgd
+05-12-22 23:48:20.886 [main] INFO - [add, dfgd]
+05-12-22 23:48:43.495 [main] INFO - add sdfsdf
+05-12-22 23:48:43.497 [main] INFO - [add, sdfsdf]
+05-12-22 23:50:05.349 [main] INFO - add dfgdf
+05-12-22 23:50:05.351 [main] INFO - [add, dfgdf]
+05-12-22 23:52:01.220 [main] INFO - help
+05-12-22 23:52:01.222 [main] INFO - [help]
+05-12-22 23:52:05.582 [main] INFO - list
+05-12-22 23:52:05.582 [main] INFO - [list]
+05-12-22 23:52:07.822 [main] INFO - add jshdfgsdjh
+05-12-22 23:52:07.822 [main] INFO - [add, jshdfgsdjh]
+05-12-22 23:54:36.949 [main] INFO - help -> [help]
+05-12-22 23:54:40.094 [main] INFO - add sjkdhfg -> [add, sjkdhfg]
+05-12-22 23:59:08.469 [main] INFO - help -> [help]
+05-12-22 23:59:10.094 [main] INFO - list -> [list]
+05-12-22 23:59:22.767 [main] INFO - add sjhdkfg jhsdfg hfg@fdgdjh.hjf 895245752154 -> [add, sjhdkfg jhsdfg hfg@fdgdjh.hjf 895245752154]
+05-12-22 23:59:37.030 [main] INFO - add sjhdkfg jhsdfg hfg@fdgdjh.hjf 89524575215 -> [add, sjhdkfg jhsdfg hfg@fdgdjh.hjf 89524575215]
+05-12-22 23:59:40.029 [main] INFO - list -> [list]
+05-12-22 23:59:42.270 [main] INFO - count -> [count]

@@ -1,0 +1,13 @@
+05-12-22 23:38:13.819 [main] WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:41:00.140 [main] WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:41:00.140 [main] ERROR - test error write
+05-12-22 23:44:43.831 WARN  [main] Main Main.java49 WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:44:43.831 ERROR [main] Main Main.java50 ERROR - test error write
+05-12-22 23:46:41.568 WARN  [main] Main Main.java49 FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:47:25.528 [main] Main Main.java49 WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:48:20.887 WARN  [main] Main  WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:48:43.497 WARN  [main] Main.java49 WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:50:05.351 2022-12-05 23:50:05,351 WARN  Main.java:49 WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:52:07.823 WARN  [main] Main Main.java49 WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:54:40.095 WARN  [main] Main Main.java48 WARN - java.lang.ArrayIndexOutOfBoundsException: Неверно введены данные!
+05-12-22 23:59:22.768 WARN  [main] Main Main.java48 WARN - java.lang.IllegalArgumentException: Неверный формат телефона!
